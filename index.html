@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SHEKO ELGEN | Gaming Streamer</title>
+  <meta name="description" content="شيكو الجن - ستريمر جيمينج مصري | FiveM - PUBG - Live Streams" />
+  <meta name="theme-color" content="#ff2d55" />
+  <meta property="og:title" content="SHEKO ELGEN | Gaming Streamer" />
+  <meta property="og:description" content="FiveM · PUBG · Gaming Live Streams" />
+  <meta property="og:type" content="website" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&family=Rubik:wght@500;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box}
+    :root{
+      --bg:#07070b;--bg2:#0e0e16;--card:#15151f;--soft:#1d1d2b;
+      --red:#ff2d55;--orange:#ff7a18;--cyan:#00e5ff;--green:#53fc18;
+      --text:#f5f5fb;--muted:#9a9ab3;--line:rgba(255,255,255,.09);
+      --shadow:0 25px 80px rgba(0,0,0,.45);
+    }
+    html{scroll-behavior:smooth}
+    body{font-family:'Cairo',sans-serif;background:var(--bg);color:var(--text);overflow-x:hidden;line-height:1.7}
+    body:before{content:"";position:fixed;inset:0;background:
+      radial-gradient(circle at 20% 20%,rgba(255,45,85,.18),transparent 30%),
+      radial-gradient(circle at 80% 10%,rgba(0,229,255,.12),transparent 25%),
+      radial-gradient(circle at 60% 90%,rgba(255,122,24,.12),transparent 30%),#07070b;z-index:-3}
+    body:after{content:"";position:fixed;inset:0;background-image:linear-gradient(rgba(255,255,255,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.025) 1px,transparent 1px);background-size:44px 44px;mask-image:linear-gradient(to bottom,#000,transparent 85%);z-index:-2;pointer-events:none}
+    a{text-decoration:none;color:inherit}
+    .container{width:min(1180px,92%);margin:auto}
+    .nav{position:fixed;top:0;left:0;right:0;z-index:99;background:rgba(7,7,11,.72);backdrop-filter:blur(18px);border-bottom:1px solid var(--line)}
+    .nav .container{height:76px;display:flex;align-items:center;justify-content:space-between}
+    .brand{font-family:'Rubik',sans-serif;font-weight:900;letter-spacing:.5px;font-size:1.18rem;display:flex;align-items:center;gap:10px}
+    .brand i{color:var(--red);filter:drop-shadow(0 0 18px rgba(255,45,85,.8))}.brand span{color:var(--red)}
+    .links{display:flex;gap:26px;list-style:none}.links a{color:var(--muted);font-weight:700;font-size:.94rem}.links a:hover{color:#fff}
+    .nav-btn{padding:10px 18px;border-radius:999px;background:linear-gradient(135deg,var(--red),var(--orange));font-weight:900;box-shadow:0 12px 35px rgba(255,45,85,.25)}
+    .hero{min-height:100vh;display:grid;place-items:center;padding:130px 0 70px;position:relative}
+    .hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:48px;align-items:center}
+    .badge{display:inline-flex;gap:9px;align-items:center;padding:8px 16px;border:1px solid rgba(255,45,85,.35);border-radius:999px;background:rgba(255,45,85,.1);color:#ff8fa5;font-weight:900;font-size:.86rem;margin-bottom:20px}
+    .pulse{width:9px;height:9px;border-radius:50%;background:var(--red);box-shadow:0 0 0 0 rgba(255,45,85,.7);animation:pulse 1.6s infinite}@keyframes pulse{70%{box-shadow:0 0 0 12px transparent}100%{box-shadow:0 0 0 0 transparent}}
+    h1{font-family:'Rubik',sans-serif;font-size:clamp(3.4rem,8vw,7.2rem);line-height:.92;font-weight:900;letter-spacing:-3px;margin-bottom:22px;background:linear-gradient(135deg,#fff,#ffd2db 45%,#ff2d55);-webkit-background-clip:text;background-clip:text;color:transparent}
+    .lead{font-size:clamp(1.05rem,2vw,1.35rem);color:var(--muted);max-width:620px;margin-bottom:30px}.lead strong{color:#fff}
+    .actions{display:flex;gap:14px;flex-wrap:wrap}.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:14px 24px;border-radius:16px;font-weight:900;border:1px solid var(--line);transition:.25s}.btn:hover{transform:translateY(-4px)}
+    .primary{background:linear-gradient(135deg,var(--red),var(--orange));box-shadow:0 18px 50px rgba(255,45,85,.28)}.ghost{background:rgba(255,255,255,.055)}
+    .paypal-btn{background:rgba(0,48,135,.18);border-color:rgba(0,112,186,.35)}
+    .hero-card{background:linear-gradient(180deg,rgba(255,255,255,.08),rgba(255,255,255,.03));border:1px solid var(--line);border-radius:34px;padding:28px;box-shadow:var(--shadow);position:relative;overflow:hidden}
+    .hero-card:before{content:"";position:absolute;inset:-80px;background:radial-gradient(circle,rgba(255,45,85,.24),transparent 58%);z-index:0}.avatar{position:relative;z-index:1;aspect-ratio:1;border-radius:30px;overflow:hidden;border:2px solid rgba(83,252,24,.4);box-shadow:0 0 35px rgba(83,252,24,.25);background:#111}
+    .avatar img{width:100%;height:100%;object-fit:cover;display:block}
+    .mini-stats{position:relative;z-index:1;display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:16px}.mini{background:rgba(0,0,0,.23);border:1px solid var(--line);border-radius:18px;padding:14px;text-align:center}.mini b{display:block;color:#fff;font-family:'Rubik';font-size:1.05rem}.mini span{color:var(--muted);font-size:.76rem;font-weight:700}
+    section{padding:84px 0}.section-head{text-align:center;margin-bottom:38px}.eyebrow{color:var(--red);font-weight:900;letter-spacing:3px;font-size:.8rem;text-transform:uppercase}.title{font-family:'Rubik';font-weight:900;font-size:clamp(2rem,4vw,3rem);margin-top:8px}.desc{color:var(--muted);max-width:650px;margin:10px auto 0}
+    .next-box{display:grid;grid-template-columns:1fr auto;gap:22px;align-items:center;background:linear-gradient(135deg,rgba(255,45,85,.14),rgba(0,229,255,.06));border:1px solid rgba(255,255,255,.1);border-radius:28px;padding:30px;box-shadow:var(--shadow)}
+    .next-box h3{font-family:'Rubik';font-size:1.6rem;margin-bottom:6px}.next-box p{color:var(--muted)}.count{display:flex;gap:10px}.time{min-width:86px;background:rgba(0,0,0,.28);border:1px solid var(--line);border-radius:18px;padding:12px;text-align:center}.time b{font-size:1.8rem;font-family:'Rubik';display:block}.time span{color:var(--muted);font-size:.75rem;font-weight:900}
+    .platforms{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}.social{background:linear-gradient(180deg,rgba(255,255,255,.07),rgba(255,255,255,.025));border:1px solid var(--line);border-radius:24px;padding:24px;min-height:160px;display:flex;flex-direction:column;gap:12px;transition:.25s}.social:hover{transform:translateY(-7px);border-color:var(--clr);box-shadow:0 20px 60px rgba(0,0,0,.35)}
+    .icon{width:52px;height:52px;border-radius:18px;background:rgba(255,255,255,.07);display:grid;place-items:center;font-size:1.65rem;color:var(--clr)}.social h3{font-family:'Rubik';font-size:1.1rem}.social p{color:var(--muted);font-size:.88rem;flex:1}.go{color:var(--clr);font-weight:900;font-size:.88rem}
+    .kick{--clr:#53fc18}.tiktok{--clr:#ff0050}.discord{--clr:#5865f2}.whatsapp{--clr:#25d366}.telegram{--clr:#229ed9}.instagram{--clr:#e1306c}.snapchat{--clr:#fffc00}.support{--clr:#ff7a18}.paypal{--clr:#0070ba}
+    .content-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.content-card,.clip{background:var(--card);border:1px solid var(--line);border-radius:24px;padding:26px}.content-card i{font-size:2rem;color:var(--red);margin-bottom:16px}.content-card h3,.clip h3{font-family:'Rubik';margin-bottom:8px}.content-card p,.clip p{color:var(--muted);font-size:.94rem}
+    .clips{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.thumb{height:170px;border-radius:20px;background:linear-gradient(135deg,rgba(255,45,85,.22),rgba(0,229,255,.14)),linear-gradient(135deg,#191927,#0d0d15);display:grid;place-items:center;margin-bottom:16px;border:1px solid var(--line)}.thumb i{font-size:3rem;color:#fff;opacity:.95}
+    .contact-card{display:grid;grid-template-columns:1fr auto;gap:22px;align-items:center;background:linear-gradient(135deg,rgba(255,255,255,.08),rgba(255,255,255,.03));border:1px solid var(--line);border-radius:30px;padding:34px}.contact-card h2{font-family:'Rubik';font-size:2rem}.contact-card p{color:var(--muted);margin-top:6px}
+    footer{padding:34px 0;border-top:1px solid var(--line);color:var(--muted);text-align:center}footer b{color:var(--red)}
+    .reveal{opacity:0;transform:translateY(25px);transition:.7s}.reveal.show{opacity:1;transform:translateY(0)}
+    @media(max-width:900px){.hero-grid,.next-box,.contact-card{grid-template-columns:1fr}.platforms{grid-template-columns:repeat(2,1fr)}.content-grid,.clips{grid-template-columns:1fr}.count{flex-wrap:wrap}.links{display:none}.hero-card{max-width:470px;margin:auto}.mini-stats{grid-template-columns:1fr}.nav-btn{display:none}}
+    @media(max-width:520px){.platforms{grid-template-columns:1fr}.actions .btn{width:100%}.time{flex:1}.hero{padding-top:110px}h1{letter-spacing:-1px}.next-box,.contact-card{padding:22px}.container{width:90%}}
+  </style>
+</head>
+<body>
+  <nav class="nav">
+    <div class="container">
+      <a class="brand" href="#"><i class="fa-solid fa-gamepad"></i> SHEKO <span>ELGEN</span></a>
+      <ul class="links">
+        <li><a href="#next">اللايف الجاي</a></li>
+        <li><a href="#platforms">المنصات</a></li>
+        <li><a href="#content">المحتوى</a></li>
+        <li><a href="#contact">تعاون</a></li>
+      </ul>
+      <a class="nav-btn" href="https://kick.com/sheko-elgen" target="_blank" rel="noopener">Watch Live</a>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <div class="container hero-grid">
+      <div class="hero-text reveal">
+        <div class="badge"><span class="pulse"></span> GAMING STREAMER</div>
+        <h1>SHEKO<br>ELGEN</h1>
+        <p class="lead"><strong>FiveM · PUBG · Challenges</strong><br>محتوى جيمينج مصري بشكل احترافي، لايفات، ضحك، تحديات، وكوميونيتي جامد.</p>
+        <div class="actions">
+          <a class="btn primary" href="https://kick.com/sheko-elgen" target="_blank" rel="noopener"><i class="fa-brands fa-kickstarter-k"></i> شاهد على Kick</a>
+          <a class="btn ghost" href="https://tikalert-eg.com/sheko123" target="_blank" rel="noopener"><i class="fa-solid fa-bolt"></i> ادعم الستريم</a>
+          <a class="btn ghost paypal-btn" href="https://paypal.me/shekostore12" target="_blank" rel="noopener"><i class="fa-brands fa-paypal"></i> PayPal</a>
+        </div>
+      </div>
+      <div class="hero-card reveal">
+        <div class="avatar">
+          <img src="sheko.jpg" alt="Sheko Elgen">
+        </div>
+        <div class="mini-stats">
+          <div class="mini"><b>FiveM</b><span>Roleplay</span></div>
+          <div class="mini"><b>PUBG</b><span>Mobile</span></div>
+          <div class="mini"><b>Live</b><span>Streams</span></div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section id="next">
+      <div class="container">
+        <div class="next-box reveal">
+          <div>
+            <div class="eyebrow">NEXT LIVE</div>
+            <h3>اللايف الجاي قريبًا على Kick</h3>
+            <p>اكتب هنا الموعد الحقيقي بعدين: مثال الجمعة 10:00 مساءً — FiveM RP Night.</p>
+          </div>
+          <div class="count" aria-label="countdown placeholder">
+            <div class="time"><b>00</b><span>Days</span></div>
+            <div class="time"><b>10</b><span>Hours</span></div>
+            <div class="time"><b>30</b><span>Minutes</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="platforms">
+      <div class="container">
+        <div class="section-head reveal">
+          <div class="eyebrow">SOCIAL LINKS</div>
+          <h2 class="title">كل المنصات في مكان واحد</h2>
+          <p class="desc">تابع شيكو الجن على المنصة اللي تناسبك، لايفات، كليبات، أخبار، وتحديثات الكوميونيتي.</p>
+        </div>
+        <div class="platforms">
+          <a class="social kick reveal" href="https://kick.com/sheko-elgen" target="_blank" rel="noopener"><div class="icon"><i class="fa-brands fa-kickstarter-k"></i></div><h3>Kick</h3><p>البث المباشر واللايفات الأساسية.</p><span class="go">افتح المنصة ←</span></a>
+          <a class="social tiktok reveal" href="https://www.tiktok.com/@sheko719" target="_blank" rel="noopener"><div class="icon"><i class="fa-brands fa-tiktok"></i></div><h3>TikTok</h3><p>كليبات قصيرة ولحظات من اللايف.</p><span class="go">تابع الآن ←</span></a>
+          <a class="social discord reveal" href="https://discord.gg/uJekbhqJ" target="_blank" rel="noopener"><div class="icon"><i class="fa-brands fa-discord"></i></div><h3>Discord</h3><p>سيرفر الكوميونيتي والتجمعات.</p><span class="go">ادخل السيرفر ←</span></a>
+          <a class="social whatsapp reveal" href="https://whatsapp.com/channel/0029VaiH8CL9WtBwKFaKZb2Q" target="_blank" rel="noopener"><div class="icon"><i class="fa-brands fa-whatsapp"></i></div><h3>WhatsApp</h3><p>قناة الأخبار ومواعيد اللايف.</p><span class="go">متابعة ←</span></a>
+          <a class="social telegram reveal" href="https://t.me/shekoostore12" target="_blank" rel="noopener"><div class="icon"><i class="fa-brands fa-telegram"></i></div><h3>Telegram</h3><p>متجر وحسابات وتحديثات.</p><span class="go">دخول ←</span></a>
+          <a class="social instagram reveal" href="https://www.instagram.com/mohamedshekoo_official" target="_blank" rel="noopener"><div class="icon"><i class="fa-brands fa-instagram"></i></div><h3>Instagram</h3><p>صور وكواليس من خلف الستريم.</p><span class="go">تابع ←</span></a>
+          <a class="social snapchat reveal" href="https://snapchat.com/t/LKzg4dRF" target="_blank" rel="noopener"><div class="icon"><i class="fa-brands fa-snapchat"></i></div><h3>Snapchat</h3><p>سنابات يومية ومحتوى سريع.</p><span class="go">إضافة ←</span></a>
+          <a class="social support reveal" href="https://tikalert-eg.com/sheko123" target="_blank" rel="noopener"><div class="icon"><i class="fa-solid fa-gift"></i></div><h3>Support</h3><p>ادعم الستريم وساعد المحتوى يكبر.</p><span class="go">ادعم الآن ←</span></a>
+          <a class="social paypal reveal" href="https://paypal.me/shekostore12" target="_blank" rel="noopener"><div class="icon"><i class="fa-brands fa-paypal"></i></div><h3>PayPal</h3><p>ادعم شيكو الجن عن طريق PayPal.</p><span class="go">Donate Now →</span></a>
+        </div>
+      </div>
+    </section>
+
+    <section id="content">
+      <div class="container">
+        <div class="section-head reveal">
+          <div class="eyebrow">CONTENT</div>
+          <h2 class="title">المحتوى اللي هتلاقيه</h2>
+        </div>
+        <div class="content-grid">
+          <div class="content-card reveal"><i class="fa-solid fa-car-side"></i><h3>FiveM Roleplay</h3><p>مواقف RP، مطاردات، سيناريوهات، وضحك مع الكوميونيتي.</p></div>
+          <div class="content-card reveal"><i class="fa-solid fa-crosshairs"></i><h3>PUBG Action</h3><p>جيم بلاي، تحديات، لقطات قوية، وماتشات نار.</p></div>
+          <div class="content-card reveal"><i class="fa-solid fa-users"></i><h3>Community Nights</h3><p>لايفات تفاعل، مسابقات، دخول متابعين، وجو صحاب.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="container">
+        <div class="contact-card reveal">
+          <div>
+            <div class="eyebrow">BUSINESS</div>
+            <h2>تعاون أو إعلان؟</h2>
+            <p>للتواصل بخصوص الإعلانات، التعاون، أو إدارة المحتوى.</p>
+          </div>
+          <a class="btn primary" href="tel:+201066787472"><i class="fa-solid fa-phone"></i> 01066787472</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">© 2026 <b>SHEKO ELGEN</b> — Designed by <b>ELMNOUFY</b></div>
+  </footer>
+
+  <script>
+    const io = new IntersectionObserver((entries)=>{
+      entries.forEach(entry=>{ if(entry.isIntersecting) entry.target.classList.add('show'); });
+    },{threshold:.12});
+    document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+  </script>
+</body>
+</html>

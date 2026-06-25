@@ -1,0 +1,163 @@
+{
+  "site": {
+    "streamerName": "SHEKO ELGEN",
+    "arabicName": "شيكو الجن",
+    "tagline": "FiveM · PUBG · Challenges",
+    "description": "محتوى جيمينج مصري بشكل احترافي، لايفات، ضحك، تحديات، وكوميونيتي جامد.",
+    "profileImage": "sheko.jpg",
+    "bannerImage": "",
+    "logoImage": "",
+    "phone": "01066787472",
+    "email": "",
+    "businessTitle": "تعاون أو إعلان؟",
+    "businessText": "للتواصل بخصوص الإعلانات، التعاون، أو إدارة المحتوى.",
+    "isOnline": true
+  },
+  "seo": {
+    "title": "SHEKO ELGEN | Gaming Streamer",
+    "description": "شيكو الجن - ستريمر جيمينج مصري | FiveM - PUBG - Live Streams",
+    "favicon": "",
+    "shareImage": ""
+  },
+  "live": {
+    "title": "اللايف الجاي قريبًا على Kick",
+    "description": "FiveM RP Night — استنونا في لايف نار.",
+    "date": "2026-07-01T22:00",
+    "startingSoon": false,
+    "liveNow": false
+  },
+  "theme": {
+    "main": "#ff2d55",
+    "second": "#ff7a18",
+    "bg": "#07070b",
+    "card": "#15151f",
+    "text": "#f5f5fb",
+    "muted": "#aaaabc",
+    "animations": true,
+    "mode": "dark"
+  },
+  "stats": {
+    "followers": "10K+",
+    "streams": "250+",
+    "clips": "500+"
+  },
+  "links": [
+    {
+      "id": "kick",
+      "name": "Kick",
+      "url": "https://kick.com/sheko-elgen",
+      "iconType": "fa",
+      "icon": "fa-brands fa-kickstarter-k",
+      "color": "#53fc18",
+      "visible": true,
+      "newTab": true,
+      "description": "البث المباشر واللايفات الأساسية."
+    },
+    {
+      "id": "tiktok",
+      "name": "TikTok",
+      "url": "https://www.tiktok.com/@sheko719",
+      "iconType": "fa",
+      "icon": "fa-brands fa-tiktok",
+      "color": "#ff0050",
+      "visible": true,
+      "newTab": true,
+      "description": "كليبات قصيرة ولحظات من اللايف."
+    },
+    {
+      "id": "discord",
+      "name": "Discord",
+      "url": "https://discord.gg/uJekbhqJ",
+      "iconType": "fa",
+      "icon": "fa-brands fa-discord",
+      "color": "#5865f2",
+      "visible": true,
+      "newTab": true,
+      "description": "سيرفر الكوميونيتي والتجمعات."
+    },
+    {
+      "id": "whatsapp",
+      "name": "WhatsApp",
+      "url": "https://whatsapp.com/channel/0029VaiH8CL9WtBwKFaKZb2Q",
+      "iconType": "fa",
+      "icon": "fa-brands fa-whatsapp",
+      "color": "#25d366",
+      "visible": true,
+      "newTab": true,
+      "description": "قناة الأخبار ومواعيد اللايف."
+    },
+    {
+      "id": "telegram",
+      "name": "Telegram",
+      "url": "https://t.me/shekoostore12",
+      "iconType": "fa",
+      "icon": "fa-brands fa-telegram",
+      "color": "#229ed9",
+      "visible": true,
+      "newTab": true,
+      "description": "متجر وحسابات وتحديثات."
+    },
+    {
+      "id": "instagram",
+      "name": "Instagram",
+      "url": "https://www.instagram.com/mohamedshekoo_official",
+      "iconType": "fa",
+      "icon": "fa-brands fa-instagram",
+      "color": "#e1306c",
+      "visible": true,
+      "newTab": true,
+      "description": "صور وكواليس من خلف الستريم."
+    },
+    {
+      "id": "snapchat",
+      "name": "Snapchat",
+      "url": "https://snapchat.com/t/LKzg4dRF",
+      "iconType": "fa",
+      "icon": "fa-brands fa-snapchat",
+      "color": "#fffc00",
+      "visible": true,
+      "newTab": true,
+      "description": "سنابات يومية ومحتوى سريع."
+    },
+    {
+      "id": "tikalert",
+      "name": "TikAlert",
+      "url": "https://tikalert-eg.com/sheko123",
+      "iconType": "fa",
+      "icon": "fa-solid fa-gift",
+      "color": "#ff7a18",
+      "visible": true,
+      "newTab": true,
+      "description": "ادعم الستريم وساعد المحتوى يكبر."
+    },
+    {
+      "id": "paypal",
+      "name": "PayPal",
+      "url": "https://paypal.me/shekostore12",
+      "iconType": "fa",
+      "icon": "fa-brands fa-paypal",
+      "color": "#009cde",
+      "visible": true,
+      "newTab": true,
+      "description": "ادعم شيكو عن طريق PayPal."
+    }
+  ],
+  "content": [
+    {
+      "icon": "fa-solid fa-car-side",
+      "title": "FiveM Roleplay",
+      "text": "مواقف RP، مطاردات، سيناريوهات، وضحك مع الكوميونيتي."
+    },
+    {
+      "icon": "fa-solid fa-crosshairs",
+      "title": "PUBG Action",
+      "text": "جيم بلاي، تحديات، لقطات قوية، وماتشات نار."
+    },
+    {
+      "icon": "fa-solid fa-users",
+      "title": "Community Nights",
+      "text": "لايفات تفاعل، مسابقات، دخول متابعين، وجو صحاب."
+    }
+  ],
+  "media": []
+}
