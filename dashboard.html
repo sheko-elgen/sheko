@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SHEKO ELGEN Admin Dashboard</title>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&family=Poppins:wght@400;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--main:#ff2d55;--second:#ff7a18;--soft:#ffd1db}
+body{min-height:100vh;font-family:Cairo,Poppins,sans-serif;color:#fff;background:radial-gradient(circle at top right,rgba(255,45,85,.20),transparent 30%),radial-gradient(circle at bottom left,rgba(255,122,24,.15),transparent 30%),linear-gradient(135deg,#08080d,#16080f,#08080d)}
+.login-page{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:24px}
+.login-card,.panel{background:rgba(0,0,0,.40);border:1px solid rgba(255,255,255,.12);border-radius:28px;padding:30px;backdrop-filter:blur(12px);box-shadow:0 0 35px rgba(0,0,0,.35)}
+.login-card{width:100%;max-width:470px}
+h1{font-size:36px;color:var(--main);margin-bottom:8px;font-weight:900}
+p{color:#cfcfcf;line-height:1.7}
+label{display:block;margin:16px 0 8px;color:var(--soft);font-weight:900}
+input,textarea,select{width:100%;padding:14px 16px;border-radius:14px;border:1px solid rgba(255,255,255,.14);background:rgba(0,0,0,.38);color:#fff;outline:none;font-family:Cairo,Poppins,sans-serif}
+textarea{min-height:105px;resize:vertical}
+button,.btn{margin-top:18px;padding:14px 22px;border:none;border-radius:14px;background:linear-gradient(135deg,var(--main),var(--second));color:#fff;font-weight:900;cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;justify-content:center;gap:9px;font-family:Cairo,Poppins,sans-serif}
+button.secondary,.btn.secondary{background:rgba(255,255,255,.08);color:#fff;border:1px solid rgba(255,255,255,.14)}
+button.danger{background:linear-gradient(135deg,#ff6868,#a80000);color:#fff}
+.hidden{display:none!important}
+.layout{display:grid;grid-template-columns:280px 1fr;min-height:100vh}
+.sidebar{padding:24px;border-left:1px solid rgba(255,255,255,.1);background:rgba(0,0,0,.38);position:sticky;top:0;height:100vh}
+.brand{font-size:24px;font-weight:900;color:var(--main);margin-bottom:24px}.brand span{color:#fff}
+.menu{display:flex;flex-direction:column;gap:10px}
+.menu button{margin:0;width:100%;background:rgba(255,255,255,.06);color:#fff;text-align:right;border:1px solid rgba(255,255,255,.08)}
+.menu button.active{background:rgba(255,45,85,.22);border-color:rgba(255,45,85,.50)}
+.main{padding:28px}.panel{max-width:1120px;margin:0 auto 22px}
+.panel-title{display:flex;justify-content:space-between;align-items:center;gap:14px;margin-bottom:18px}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:16px}.three{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.status{margin-top:16px;color:#9dffb2;font-weight:900}.warn{margin-top:14px;color:#ffd36d;font-size:13px}
+.preview-link{color:var(--main);text-decoration:none;font-weight:900}
+.link-box{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:18px;padding:16px;margin-bottom:14px}
+.link-head{display:flex;justify-content:space-between;align-items:center;gap:12px}.small-actions{display:flex;gap:8px;flex-wrap:wrap}.small-actions button{padding:9px 12px;margin:0;border-radius:10px}
+pre{background:rgba(0,0,0,.40);border:1px solid rgba(255,255,255,.1);color:#9dffb2;padding:16px;border-radius:16px;max-height:280px;overflow:auto;direction:ltr;text-align:left;margin-top:16px;white-space:pre-wrap}
+@media(max-width:900px){.layout{grid-template-columns:1fr}.sidebar{position:relative;height:auto}.row,.three{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="login-page" id="loginPage">
+  <div class="login-card">
+    <h1>Sheko Admin</h1>
+    <p>لوحة تحكم خاصة بموقع SHEKO ELGEN.</p>
+    <label>Password</label>
+    <input type="password" id="passwordInput" placeholder="Enter admin password">
+    <button onclick="login()"><i class="fa-solid fa-lock-open"></i> Login</button>
+    <div class="warn">Password: <b>Sheko2026</b></div>
+  </div>
+</div>
+
+<div class="layout hidden" id="dashboardPage">
+  <aside class="sidebar">
+    <div class="brand">SHEKO <span>ADMIN</span></div>
+    <div class="menu">
+      <button class="active" onclick="showTab('general', this)"><i class="fa-solid fa-sliders"></i> General</button>
+      <button onclick="showTab('stream', this)"><i class="fa-solid fa-video"></i> Stream</button>
+      <button onclick="showTab('links', this)"><i class="fa-solid fa-link"></i> All Links</button>
+      <button onclick="showTab('content', this)"><i class="fa-solid fa-pen"></i> Content</button>
+      <button onclick="showTab('export', this)"><i class="fa-solid fa-download"></i> Export</button>
+      <button class="danger" onclick="logout()"><i class="fa-solid fa-right-from-bracket"></i> Logout</button>
+    </div>
+  </aside>
+  <main class="main">
+    <div class="panel">
+      <div class="panel-title">
+        <div><h1>Dashboard</h1><p>كل لينكات شيكو موجودة هنا + تقدر تضيف أي لينك جديد.</p></div>
+        <a class="preview-link" href="index.html" target="_blank">Open Website</a>
+      </div>
+      <button onclick="saveLocal()"><i class="fa-solid fa-floppy-disk"></i> Save Local</button>
+      <button class="secondary" onclick="downloadJson()"><i class="fa-solid fa-download"></i> Download data.json</button>
+      <button class="secondary" onclick="loadSettings()"><i class="fa-solid fa-rotate"></i> Reload</button>
+      <div class="status" id="statusMsg"></div>
+    </div>
+
+    <section class="panel tab" id="tab-general">
+      <h1>General</h1>
+      <div class="row"><div><label>Streamer Name</label><input id="streamerName"></div><div><label>Arabic Name</label><input id="arabicName"></div></div>
+      <div class="row"><div><label>Subtitle / Tagline</label><input id="tagline"></div><div><label>Profile Image</label><input id="profileImage"></div></div>
+      <label>Main Message</label><textarea id="description"></textarea>
+      <div class="row"><div><label>Phone</label><input id="phone"></div><div><label>Business Title</label><input id="businessTitle"></div></div>
+      <label>Business Text</label><textarea id="businessText"></textarea>
+    </section>
+
+    <section class="panel tab hidden" id="tab-stream">
+      <h1>Stream Control</h1>
+      <div class="row"><div><label>Next Stream Date & Time</label><input type="datetime-local" id="nextLiveDate"></div><div><label>Next Stream Title</label><input id="nextLiveTitle"></div></div>
+      <label>Next Stream Note</label><input id="nextLiveDescription">
+      <div class="row"><div><label>Live Now</label><select id="liveNow"><option value="false">No</option><option value="true">Yes</option></select></div><div><label>Starting Soon</label><select id="startingSoon"><option value="false">No</option><option value="true">Yes</option></select></div></div>
+    </section>
+
+    <section class="panel tab hidden" id="tab-links">
+      <div class="panel-title"><div><h1>All Links</h1><p>Kick / TikTok / Discord / WhatsApp / Telegram / Instagram / Snapchat / TikAlert / PayPal</p></div><button onclick="addLink()"><i class="fa-solid fa-plus"></i> Add Link</button></div>
+      <div id="linksArea"></div>
+    </section>
+
+    <section class="panel tab hidden" id="tab-content">
+      <h1>Content Cards</h1>
+      <div class="three">
+        <div><label>Card 1 Icon</label><input id="c1Icon"><label>Card 1 Title</label><input id="c1Title"><label>Card 1 Text</label><textarea id="c1Text"></textarea></div>
+        <div><label>Card 2 Icon</label><input id="c2Icon"><label>Card 2 Title</label><input id="c2Title"><label>Card 2 Text</label><textarea id="c2Text"></textarea></div>
+        <div><label>Card 3 Icon</label><input id="c3Icon"><label>Card 3 Title</label><input id="c3Title"><label>Card 3 Text</label><textarea id="c3Text"></textarea></div>
+      </div>
+    </section>
+
+    <section class="panel tab hidden" id="tab-export">
+      <h1>Export data.json</h1>
+      <p>بعد أي تعديل اضغط Download data.json، وارفع الملف مكان data.json القديم على GitHub.</p>
+      <button onclick="downloadJson()"><i class="fa-solid fa-download"></i> Download data.json</button>
+      <button class="secondary" onclick="copyJson()"><i class="fa-solid fa-copy"></i> Copy JSON</button>
+      <pre id="jsonPreview"></pre>
+    </section>
+  </main>
+</div>
+
+<script>
+const ADMIN_PASSWORD = "Sheko2026";
+let data = {
+  site:{streamerName:"SHEKO ELGEN",arabicName:"شيكو الجن",tagline:"FiveM · PUBG · Challenges",description:"محتوى جيمينج مصري بشكل احترافي، لايفات، ضحك، تحديات، وكوميونيتي جامد.",profileImage:"sheko.jpg",phone:"01066787472",businessTitle:"تعاون أو إعلان؟",businessText:"للتواصل بخصوص الإعلانات، التعاون، أو إدارة المحتوى."},
+  live:{title:"اللايف الجاي قريبًا على Kick",description:"FiveM RP Night — استنونا في لايف نار.",date:"2026-07-01T22:00",liveNow:false,startingSoon:false},
+  theme:{main:"#ff2d55",second:"#ff7a18",bg:"#07070b",card:"#15151f",text:"#f5f5fb",muted:"#aaaabc"},
+  links:[
+    {name:"Kick",url:"https://kick.com/sheko-elgen",iconType:"fa",icon:"fa-brands fa-kickstarter-k",color:"#53fc18",visible:true,newTab:true,description:"البث المباشر واللايفات الأساسية."},
+    {name:"TikTok",url:"https://www.tiktok.com/@sheko719",iconType:"fa",icon:"fa-brands fa-tiktok",color:"#ff0050",visible:true,newTab:true,description:"كليبات قصيرة ولحظات من اللايف."},
+    {name:"Discord",url:"https://discord.gg/uJekbhqJ",iconType:"fa",icon:"fa-brands fa-discord",color:"#5865f2",visible:true,newTab:true,description:"سيرفر الكوميونيتي والتجمعات."},
+    {name:"WhatsApp",url:"https://whatsapp.com/channel/0029VaiH8CL9WtBwKFaKZb2Q",iconType:"fa",icon:"fa-brands fa-whatsapp",color:"#25d366",visible:true,newTab:true,description:"قناة الأخبار ومواعيد اللايف."},
+    {name:"Telegram",url:"https://t.me/shekoostore12",iconType:"fa",icon:"fa-brands fa-telegram",color:"#229ed9",visible:true,newTab:true,description:"متجر وحسابات وتحديثات."},
+    {name:"Instagram",url:"https://www.instagram.com/mohamedshekoo_official",iconType:"fa",icon:"fa-brands fa-instagram",color:"#e1306c",visible:true,newTab:true,description:"صور وكواليس من خلف الستريم."},
+    {name:"Snapchat",url:"https://snapchat.com/t/LKzg4dRF",iconType:"fa",icon:"fa-brands fa-snapchat",color:"#fffc00",visible:true,newTab:true,description:"سنابات يومية ومحتوى سريع."},
+    {name:"TikAlert",url:"https://tikalert-eg.com/sheko123",iconType:"fa",icon:"fa-solid fa-gift",color:"#ff7a18",visible:true,newTab:true,description:"ادعم الستريم وساعد المحتوى يكبر."},
+    {name:"PayPal",url:"https://paypal.me/shekostore12",iconType:"fa",icon:"fa-brands fa-paypal",color:"#009cde",visible:true,newTab:true,description:"ادعم شيكو عن طريق PayPal."}
+  ],
+  content:[
+    {icon:"fa-solid fa-car-side",title:"FiveM Roleplay",text:"مواقف RP، مطاردات، سيناريوهات، وضحك مع الكوميونيتي."},
+    {icon:"fa-solid fa-crosshairs",title:"PUBG Action",text:"جيم بلاي، تحديات، لقطات قوية، وماتشات نار."},
+    {icon:"fa-solid fa-users",title:"Community Nights",text:"لايفات تفاعل، مسابقات، دخول متابعين، وجو صحاب."}
+  ]
+};
+function login(){if(passwordInput.value!==ADMIN_PASSWORD){alert("Wrong password");return}loginPage.classList.add("hidden");dashboardPage.classList.remove("hidden");loadSettings()}
+function logout(){dashboardPage.classList.add("hidden");loginPage.classList.remove("hidden");passwordInput.value=""}
+function showTab(tab,btn){document.querySelectorAll(".tab").forEach(el=>el.classList.add("hidden"));document.getElementById("tab-"+tab).classList.remove("hidden");document.querySelectorAll(".menu button").forEach(el=>el.classList.remove("active"));btn.classList.add("active");refreshPreview()}
+function loadSettings(){const saved=localStorage.getItem("shekoDashboardDataAllLinks");if(saved){data=JSON.parse(saved)}putDataInFields();renderLinks();refreshPreview();statusMsg.innerText="Loaded."}
+function putDataInFields(){streamerName.value=data.site.streamerName||"";arabicName.value=data.site.arabicName||"";tagline.value=data.site.tagline||"";description.value=data.site.description||"";profileImage.value=data.site.profileImage||"";phone.value=data.site.phone||"";businessTitle.value=data.site.businessTitle||"";businessText.value=data.site.businessText||"";nextLiveTitle.value=data.live.title||"";nextLiveDescription.value=data.live.description||"";nextLiveDate.value=(data.live.date||"").slice(0,16);liveNow.value=String(!!data.live.liveNow);startingSoon.value=String(!!data.live.startingSoon);c1Icon.value=data.content[0]?.icon||"";c1Title.value=data.content[0]?.title||"";c1Text.value=data.content[0]?.text||"";c2Icon.value=data.content[1]?.icon||"";c2Title.value=data.content[1]?.title||"";c2Text.value=data.content[1]?.text||"";c3Icon.value=data.content[2]?.icon||"";c3Title.value=data.content[2]?.title||"";c3Text.value=data.content[2]?.text||""}
+function getDataFromFields(){data.site.streamerName=streamerName.value;data.site.arabicName=arabicName.value;data.site.tagline=tagline.value;data.site.description=description.value;data.site.profileImage=profileImage.value;data.site.phone=phone.value;data.site.businessTitle=businessTitle.value;data.site.businessText=businessText.value;data.live.title=nextLiveTitle.value;data.live.description=nextLiveDescription.value;data.live.date=nextLiveDate.value;data.live.liveNow=liveNow.value==="true";data.live.startingSoon=startingSoon.value==="true";data.content=[{icon:c1Icon.value,title:c1Title.value,text:c1Text.value},{icon:c2Icon.value,title:c2Title.value,text:c2Text.value},{icon:c3Icon.value,title:c3Title.value,text:c3Text.value}];return data}
+document.addEventListener("input",()=>refreshPreview())
+function saveLocal(){getDataFromFields();localStorage.setItem("shekoDashboardDataAllLinks",JSON.stringify(data));refreshPreview();statusMsg.innerText="Saved locally. Download data.json to publish."}
+function renderLinks(){linksArea.innerHTML="";data.links.forEach((link,index)=>{const box=document.createElement("div");box.className="link-box";box.innerHTML=`<div class="link-head"><b>${index+1} - ${link.name}</b><div class="small-actions"><button class="secondary" onclick="moveLink(${index},-1)">↑</button><button class="secondary" onclick="moveLink(${index},1)">↓</button><button class="danger" onclick="deleteLink(${index})">Delete</button></div></div><div class="row"><div><label>Name</label><input value="${escapeHtml(link.name)}" oninput="data.links[${index}].name=this.value;refreshPreview()"></div><div><label>URL</label><input value="${escapeHtml(link.url)}" oninput="data.links[${index}].url=this.value;refreshPreview()"></div></div><div class="row"><div><label>Icon Class</label><input value="${escapeHtml(link.icon)}" oninput="data.links[${index}].icon=this.value;refreshPreview()"></div><div><label>Color</label><input type="color" value="${link.color}" oninput="data.links[${index}].color=this.value;refreshPreview()"></div></div><div class="row"><div><label>Visible</label><select onchange="data.links[${index}].visible=this.value==='true';refreshPreview()"><option value="true" ${link.visible?'selected':''}>Yes</option><option value="false" ${!link.visible?'selected':''}>No</option></select></div><div><label>Open New Tab</label><select onchange="data.links[${index}].newTab=this.value==='true';refreshPreview()"><option value="true" ${link.newTab?'selected':''}>Yes</option><option value="false" ${!link.newTab?'selected':''}>No</option></select></div></div><label>Description</label><textarea oninput="data.links[${index}].description=this.value;refreshPreview()">${escapeHtml(link.description||"")}</textarea>`;linksArea.appendChild(box)})}
+function addLink(){data.links.push({name:"New Link",url:"https://",iconType:"fa",icon:"fa-solid fa-link",color:"#ff2d55",visible:true,newTab:true,description:""});renderLinks();refreshPreview()}
+function deleteLink(i){if(confirm("Delete this link?")){data.links.splice(i,1);renderLinks();refreshPreview()}}
+function moveLink(i,d){const j=i+d;if(j<0||j>=data.links.length)return;[data.links[i],data.links[j]]=[data.links[j],data.links[i]];renderLinks();refreshPreview()}
+function refreshPreview(){getDataFromFields();if(document.getElementById("jsonPreview"))jsonPreview.textContent=JSON.stringify(data,null,2)}
+function downloadJson(){getDataFromFields();localStorage.setItem("shekoDashboardDataAllLinks",JSON.stringify(data));const blob=new Blob([JSON.stringify(data,null,2)],{type:"application/json"});const a=document.createElement("a");a.href=URL.createObjectURL(blob);a.download="data.json";a.click();statusMsg.innerText="data.json downloaded. Upload it to GitHub."}
+async function copyJson(){getDataFromFields();await navigator.clipboard.writeText(JSON.stringify(data,null,2));alert("Copied JSON")}
+function escapeHtml(str){return String(str||"").replaceAll("&","&amp;").replaceAll("<","&lt;").replaceAll(">","&gt;").replaceAll('"',"&quot;")}
+</script>
+</body>
+</html>
